@@ -1,0 +1,125 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2em;
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Main content styles */
+  main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  /* Schedule tabs styles */
+  nav ul li.active {
+    background-color: white;
+    color: #fff;
+    border: 1px solid white;
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  /* Speakers styles */
+  .speaker {
+    margin-bottom: 20px;
+  }
+  
+  .speaker h3 {
+    color: #333;
+  }
+  
+  .speaker a {
+    color: #007BFF;
+  }
+  
+  /* Favorites styles */
+  #favoriteList {
+    font-style: italic;
+  }
+  
+  /* Sponsors styles */
+  #sponsorCarousel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  #sponsorCarousel img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100px; /* Adjust the max-height as needed */
+    margin: 0 10px;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    header {
+      padding: 10px;
+    }
+  
+    nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    main {
+      padding: 10px;
+    }
+  }
+  
