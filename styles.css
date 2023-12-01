@@ -99,6 +99,12 @@ nav a:hover {
   color: #3498db; /* Choose a color for hover effect */
 }
 
+.main-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
 .schedule {
   max-width: 800px;
   margin: 0 auto;
@@ -196,13 +202,16 @@ nav a:hover {
 }
 
 .speaker {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  text-align: center;
+  float: left; /* Display speakers side by side */
+  width: 200px; 
   margin: 0 10px; /* Adjust the margin between speakers */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.speaker img {
+  width: 100%; /* Make sure the image fills the container */
+  height: 200px;
+  height: auto;
 }
 
 .speaker h3 {
