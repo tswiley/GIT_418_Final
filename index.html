@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Conference</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 <body>
 
@@ -29,116 +30,136 @@
             </div>
         </div>
         <div class="schedule">
-            <ul>
+            <ul class="tabs">
                 <li><a href="#day1">Day 1</a></li>
                 <li><a href="#day2">Day 2</a></li>
                 <li><a href="#day3">Day 3</a></li>
             </ul>
+        
+            <!-- Day 1 -->
+            <section id="day1" class="tab-content">
+                <div class="card">
+                    <h2>Day 1 Schedule</h2>
+                    <p>9:00 AM - Registration</p>
+                    <p>9:00 AM - Welcome Introduction</p>
+                    <p>10:00 AM - Keynote Address</p>
+                    <p>11:30 AM - Breakout Session 1</p>
+                    <p>12:00 PM - Lunch Break</p>
+                    <p>1:00 PM - Keynote Speaker</p>
+                    <p>1:30 PM - Breakout Session 2</p>
+                    <p>4:30 PM - End of Day</p>
+                    <p>5:30 PM - Dinner</p>
+                    <p>7:00 PM - Mixer</p>
+                </div>
+            </section>
+        
+            <!-- Day 2 -->
+            <section id="day2" class="tab-content">
+                <div class="card">
+                    <h2>Day 2 Schedule</h2>
+                    <p>9:00 AM - Panel Discussion</p>
+                    <p>11:00 AM - Workshop: Web Development Trends</p>
+                    <p>12:00 PM - Lunch Break</p>
+                    <p>1:00 PM - Vendors</p>
+                    <p>4:30 PM - End of Day</p>
+                    <p>5:30 PM - Dinner</p>
+                    <p>7:00 PM - Mixer</p>
+                </div>
+            </section>
+        
+            <!-- Day 3 -->
+            <section id="day3" class="tab-content">
+                <div class="card">
+                    <h2>Day 3 Schedule</h2>
+                    <p>10:00 AM - Fireside Chat with Industry Experts</p>
+                    <p>12:00 PM - Lunch Break</p>
+                    <p>1:00 PM - Networking Session</p>
+                    <p>3:30 PM - Closing Ceremony</p>
+                    <p>4:30 PM - Release</p>
+                </div>
+            </section>
         </div>
 
-        <!-- Day 1 -->
-        <section id="day1" class="tab-content">
-            <h2>Day 1 Schedule</h2>
-            <p>9:00 AM - Registration</p>
-            <p>9:00 AM - Welcome Introduction</p>
-            <p>10:00 AM - Keynote Address</p>
-            <p>11:30 AM - Breakout Session 1</p>
-            <p>12:00 PM - Lunch Break</p>
-            <p>1:00 PM - Keynote Speaker</p>
-            <p>1:30 PM - Breakout Session 2</p>
-            <p>4:30 PM - End of Day</p>
-            <p>5:30 PM - Dinner</p>
-            <p>7:00 PM - Mixer</p>
-        </section>
+       <div class="sponsor-tabs">
+    <ul class="tabs">
+        <li><a href="#primary">Primary Sponsors</a></li>
+        <li><a href="#partners">Media/Community Partners</a></li>
+    </ul>
+</div>
 
-        <!-- Day 2 -->
-        <section id="day2" class="tab-content">
-            <h2>Day 2 Schedule</h2>
-            <p>9:00 AM - Panel Discussion</p>
-            <p>11:00 AM - Workshop: Web Development Trends</p>
-            <p>12:00 PM - Lunch Break</p>
-            <p>1:00 PM - Vendors</p>
-            <p>4:30 PM - End of Day</p>
-            <p>5:30 PM - Dinner</p>
-            <p>7:00 PM - Mixer</p>
-        </section>
+<section id="sponsors" class="tab-content">
+    <h2>2024 Sponsors</h2>
 
-        <!-- Day 3 -->
-        <section id="day3" class="tab-content">
-            <h2>Day 3 Schedule</h2>
-            <p>10:00 AM - Fireside Chat with Industry Experts</p>
-            <p>12:00 PM - Lunch Break</p>
-            <p>1:00 PM - Networking Session</p>
-            <p>3:30 PM - Closing Ceremony</p>
-            <p>4:30 PM - Release</p>
-        </section>
+    <div id="primary" class="tab-content">
+        <div class="sponsor-card">
+            <img src="aws_logo.jpg" alt="AWS Logo">
+            <h3>AWS</h3>
+            <p>For almost 14 years, AWS has been the world’s most comprehensive and broadly adopted cloud platform...</p>
+            <p>To learn more about AWS, visit <a href="https://aws.amazon.com" target="_blank">aws.amazon.com</a>.</p>
+        </div>
 
-        <section id="sponsors" class="tab-content">
-            <h2>2024 Sponsors</h2>
+        <div class="sponsor-card">
+            <img src="instaclustr_logo.jpg" alt="Instaclustr Logo">
+            <h3>Instaclustr</h3>
+            <p>Instaclustr, now part of Spot by NetApp, helps organizations deliver applications at scale through its platform for open source technologies...</p>
+            <p>Visit Instaclustr at <a href="https://www.instaclustr.com" target="_blank">instaclustr.com</a>.</p>
+        </div>
 
-            <div class="sponsor">
-                <a href="#"><img src="aws_logo.jpg" alt="AWS Logo"></a>
-                <h3>AWS</h3>
-                <p>For almost 14 years, AWS has been the world’s most comprehensive and broadly adopted cloud platform. AWS offers over 175 fully featured services for compute, storage, databases, networking, analytics, robotics, machine learning and artificial intelligence (AI), Internet of Things (IoT), security, hybrid, virtual and augmented reality (VR and AR), media, and application development, deployment, and management from 77 Availability Zones (AZs) within 24 geographic regions. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—trust AWS to power their infrastructure, become more agile, and lower costs.</p>
-                <p>To learn more about AWS, visit <a href="https://aws.amazon.com" target="_blank">aws.amazon.com</a>.</p>
-            </div>
+        <div class="sponsor-card">
+            <img src="fairwinds_logo.jpg" alt="Fairwinds Logo">
+            <h3>Fairwinds</h3>
+            <p>Fairwinds is the trusted partner for Kubernetes security, policy and governance...</p>
+            <p>Explore more at <a href="https://www.fairwinds.com" target="_blank">fairwinds.com</a>.</p>
+        </div>
+    </div>
 
-            <div class="sponsor">
-                <a href="#"><img src="instaclustr_logo.jpg" alt="Instaclustr Logo"></a>
-                <h3>Instaclustr</h3>
-                <p>Instaclustr, now part of Spot by NetApp, helps organizations deliver applications at scale through its platform for open source technologies such as Apache Cassandra®, Apache Kafka®, Apache Spark™, Redis™, OpenSearch™, Apache ZooKeeper™, and PostgreSQL®. Instaclustr combines a complete data infrastructure environment with hands-on technology expertise to ensure ongoing performance and optimization.</p>
-                <p>Visit Instaclustr at <a href="https://www.instaclustr.com" target="_blank">instaclustr.com</a>.</p>
-            </div>
+    <div id="partners" class="tab-content">
+        <div class="sponsor-card">
+            <img src="crypto_agora_logo.jpg" alt="Crypto Agorà Logo">
+            <h3>Crypto Agorà</h3>
+            <p>Despite the lack of interest and funding that usually characterizes a bear market, crypto agorà witnessed the most growth...</p>
+            <p>Connect with us on <a href="https://www.linkedin.com/in/crypto-agora-12062820a" target="_blank">LinkedIn</a>.</p>
+        </div>
 
-            <div class="sponsor">
-                <a href="#"><img src="fairwinds_logo.jpg" alt="Fairwinds Logo"></a>
-                <h3>Fairwinds</h3>
-                <p>Fairwinds is the trusted partner for Kubernetes security, policy and governance. With Fairwinds, customers ship cloud native applications faster, more cost effectively and with less risk. Unify dev, sec and ops with software that simplifies complexity.</p>
-                <p>Explore more at <a href="https://www.fairwinds.com" target="_blank">fairwinds.com</a>.</p>
-            </div>
+        <div class="sponsor-card">
+            <img src="devitjobs_logo.jpg" alt="DevITjobs Logo">
+            <h3>DevITjobs</h3>
+            <p>DevITjobs is the first job board built with Software Engineers in mind...</p>
+            <p>Explore opportunities at <a href="https://devitjobs.com" target="_blank">devitjobs.com</a>.</p>
+        </div>
 
-            <h3>2023 Media/Community Partners</h3>
-
-            <div class="sponsor">
-                <a href="#"><img src="crypto_agora_logo.jpg" alt="Crypto Agorà Logo"></a>
-                <h3>Crypto Agorà</h3>
-                <p>Despite the lack of interest and funding that usually characterizes a bear market, crypto agorà witnessed the most growth, both in terms of team size and social media presence. We have become one of the largest crypto communities in Italy.</p>
-                <p>Connect with us on <a href="https://www.linkedin.com/in/crypto-agora-12062820a" target="_blank">LinkedIn</a>.</p>
-            </div>
-
-            <div class="sponsor">
-                <a href="#"><img src="devitjobs_logo.jpg" alt="DevITjobs Logo"></a>
-                <h3>DevITjobs</h3>
-                <p>DevITjobs is the first job board built with Software Engineers in mind. The main goal of the company is to bring more transparency, openness, and diversity to the US IT market. DevITjobs is not only for Developers but for everyone working in the IT industry: Engineers, SAP and System Admins, Product Managers, QAs and UX/UI Designers!</p>
-                <p>Explore opportunities at <a href="https://devitjobs.com" target="_blank">devitjobs.com</a>.</p>
-            </div>
-
-            <div class="sponsor">
-                <a href="#"><img src="effectus_software_logo.jpg" alt="Effectus Software Logo"></a>
-                <h3>Effectus Software</h3>
-                <p>We are a mobile & web applications development agency based in Montevideo, Uruguay. Our main purpose is to work with our customers to turn their ideas into innovative high-value products.</p>
-                <p>Learn more at <a href="https://www.effectussoftware.com" target="_blank">effectussoftware.com</a>.</p>
-            </div>
+        <div class="sponsor-card">
+            <img src="effectus_software_logo.jpg" alt="Effectus Software Logo">
+            <h3>Effectus Software</h3>
+            <p>We are a mobile & web applications development agency based in Montevideo, Uruguay...</p>
+            <p>Learn more at <a href="https://www.effectussoftware.com" target="_blank">effectussoftware.com</a>.</p>
+        </div>
+    </div>
+</section>
 
         <div class="speakers">
             <h2>Speakers</h2>
             <p>Speakers will be announced soon.</p>
             <div class="speaker">
+                <img src="effectus_software_logo.jpg" alt="Effectus Software Logo">
                 <h3>Garima Singh</h3>
                 <p>Chief Architect, Sandvik</p>
             </div>
 
             <div class="speaker">
+                <img src="effectus_software_logo.jpg" alt="Effectus Software Logo">
                 <h3>Jamie Stapleton</h3>
                 <p>VP of Global Digital Strategy, Hitachi Energy</p>
             </div>
 
             <div class="speaker">
+                <img src="effectus_software_logo.jpg" alt="Effectus Software Logo">
                 <h3>Agata Grela</h3>
                 <p>Digital Strategy Leader, RBS International</p>
             </div>
 
             <div class="speaker">
+                <img src="effectus_software_logo.jpg" alt="Effectus Software Logo">
                 <h3>Jesper Toubøl</h3>
                 <p>Vice President of Operations, Lego</p>
             </div>
@@ -173,6 +194,8 @@
             <div id="subscriptionStatus"></div>
         </section>
                
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
             
     </main>
 
@@ -180,8 +203,7 @@
         <p>&copy; 2023 Tech Conference. All rights reserved.</p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous" defer></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" crossorigin="anonymous" defer></script>
-    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
 </body>
 </html>
