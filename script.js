@@ -1,21 +1,39 @@
-// script.js
+document.addEventListener("DOMContentLoaded", function() {
+    const scheduleTabs = document.querySelectorAll('.schedule-tabs button');
+    const sponsorTabs = document.querySelectorAll('.sponsor-tabs button');
+    const allTabs = document.querySelectorAll('.schedule-tabs button, .sponsor-tabs button');
+    const allTabContents = document.querySelectorAll('.tab-content, .sponsor-tab-content');
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Code for handling tabs
+    const handleTabClick = (tabs, clickedTab) => {
+        tabs.forEach(tab => {
+            tab.classList.toggle('active', tab === clickedTab);
+        });
 
-    // Schedule Tabs
-    $('.tabs button').on('click', function () {
-        const target = $(this).data('target');
-        $('.tab-content > div').removeClass('active');
-        $(`#${target}`).addClass('active');
+        const dataTarget = clickedTab.getAttribute('data-target');
+        allTabContents.forEach(content => {
+            content.style.display = content.id === dataTarget ? 'block' : 'none';
+        });
+
+        console.log(`Clicked tab: ${dataTarget}`);
+    };
+
+    const setInitialState = (tabs, initialTab) => {
+        tabs.forEach(tab => {
+            tab.classList.toggle('active', tab.getAttribute('data-target') === initialTab);
+        });
+
+        allTabContents.forEach(content => {
+            content.style.display = content.id === initialTab ? 'block' : 'none';
+        });
+
+        console.log(`Initial tab: ${initialTab}`);
+    };
+
+    // Handle all tabs with initial state set to 'day1' for schedule and 'primary' for sponsors
+    allTabs.forEach(tab => {
+        tab.addEventListener('click', () => handleTabClick(allTabs, tab));
     });
 
-    // Sponsors Tabs
-    $('.sponsor-tabs button').on('click', function () {
-        const target = $(this).data('target');
-        $('.sponsor-content > div').removeClass('active');
-        $(`#${target}`).addClass('active');
-    });
-
-    // Code for other functionality, if any
+    setInitialState(allTabs, 'day1'); // Set initial state for schedule tabs
+    setInitialState(allTabs, 'primary'); // Set initial state for sponsor tabs
 });
