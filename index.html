@@ -144,40 +144,43 @@
             </div>
 
             <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <fieldset>
+                    <legend>Contact Us</legend>
             
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
             
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
             
-                <label for="contactMethod">Preferred Contact Method:</label>
-                <div class="contact-method">
-                    <input type="radio" id="emailMethod" name="contactMethod" value="email" checked>
-                    <label for="emailMethod">Email</label>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
             
-                    <input type="radio" id="phoneMethod" name="contactMethod" value="phone">
-                    <label for="phoneMethod">Phone</label>
-                </div>
+                    <label>Preferred Contact Method:</label>
+                    <div class="contact-method">
+                        <input type="radio" id="emailMethod" name="contactMethod" value="email" checked>
+                        <label for="emailMethod">Email</label>
+            
+                        <input type="radio" id="phoneMethod" name="contactMethod" value="phone">
+                        <label for="phoneMethod">Phone</label>
+                    </div>
+                </fieldset>
             
                 <button type="submit">Submit</button>
             </form>
             
-
-            <!-- Email Subscription with Web Storage -->
             <section id="subscribe" class="subscribe-content">
                 <h2>Subscribe to Our Newsletter</h2>
                 <form id="subscribeForm">
                     <label for="subscribeEmail">Email:</label>
                     <input type="email" id="subscribeEmail" name="subscribeEmail" required>
-
+            
                     <button type="submit">Subscribe</button>
                 </form>
-
+            
                 <div id="subscriptionStatus"></div>
             </section>
+            
         </div>
     </main>
 
