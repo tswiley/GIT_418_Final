@@ -11,7 +11,7 @@ function fetchWeather() {
         type: 'GET',
         success: function(data) {
             // Update the weather-info element with relevant weather information
-            const weatherInfo = `Current Weather in ${city}: ${data.weather[0].description}, ${Math.round(data.main.temp)}°F`;
+            const weatherInfo = `${city}: ${data.weather[0].description}, ${Math.round(data.main.temp)}°F`;
             
             // Add an emoji based on the weather description
             const emoji = getWeatherEmoji(data.weather[0].description);
@@ -22,8 +22,6 @@ function fetchWeather() {
         }
     });
 }
-
-
     // Function to get weather emoji based on description
     function getWeatherEmoji(description) {
         // Example mapping, you can customize this based on your preference
