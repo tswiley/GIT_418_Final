@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Function to fetch weather data from OpenWeather API
-    // Function to fetch weather data from OpenWeather API
 function fetchWeather() {
     const apiKey = '0dc3be9f41dc0baafe9f17469f061d46';
     const city = 'San Diego';
@@ -88,6 +86,13 @@ function fetchWeather() {
 
     // Set initial state for all tabs
     setInitialState(allTabs);
+
+
+// Call the fetchStackExchangeInfo function when the page loads
+document.addEventListener("DOMContentLoaded", function() {
+    fetchStackExchangeInfo();
+});
+
 
     const speakers = [
         {
