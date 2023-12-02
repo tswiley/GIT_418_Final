@@ -28,6 +28,9 @@
             <img id="intro-image" src="Images/techbackground.jpg" alt="Intro Image">
         </div>
         <div class="main-container">
+            <div class="schedule-title">
+                <h2>Conference Schedule</h2>
+            </div>
             <div id="schedule">
                 <ul class="schedule-tabs">
                     <li><button data-target="day1">Day 1</button></li>
@@ -133,50 +136,38 @@
                 </div>
             </div>
 
+            <div class="speakers-title">
+                <h2>2024 Speakers</h2>
+            </div>
             <div class="speakers-carousel">
-                <div class="speaker">
-                    <img src="Speakers/Garim-Singh.webp" alt="Garima Singh Photo">
-                    <h3>Garima Singh</h3>
-                    <p>Chief Architect, Sandvik</p>
-                </div>
-
-                <div class="speaker">
-                    <img src="Speakers/Jamie-Stapleton.webp" alt="Jamie Stapleton Photo">
-                    <h3>Jamie Stapleton</h3>
-                    <p>VP of Global Digital Strategy, Hitachi Energy</p>
-                </div>
-
-                <div class="speaker">
-                    <img src="Speakers/Agata-Grela.webp" alt="Agata Grela Photo">
-                    <h3>Agata Grela</h3>
-                    <p>Digital Strategy Leader, RBS International</p>
-                </div>
-
-                <div class="speaker">
-                    <img src="Speakers/Jesper-Touboel.webp" alt="Jesper Touboel Photo">
-                    <h3>Jesper Toubøl</h3>
-                    <p>Vice President of Operations, Lego</p>
-                </div>
+                <div class="carousel-container"></div>
             </div>
 
-            <section id="contact" class="tab-content">
-                <h2>Contact Us</h2>
-                <form id="contactForm">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-
-                    <button type="submit">Submit</button>
-                </form>
-            </section>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            
+                <label for="contactMethod">Preferred Contact Method:</label>
+                <div class="contact-method">
+                    <input type="radio" id="emailMethod" name="contactMethod" value="email" checked>
+                    <label for="emailMethod">Email</label>
+            
+                    <input type="radio" id="phoneMethod" name="contactMethod" value="phone">
+                    <label for="phoneMethod">Phone</label>
+                </div>
+            
+                <button type="submit">Submit</button>
+            </form>
+            
 
             <!-- Email Subscription with Web Storage -->
-            <section id="subscribe" class="tab-content">
+            <section id="subscribe" class="subscribe-content">
                 <h2>Subscribe to Our Newsletter</h2>
                 <form id="subscribeForm">
                     <label for="subscribeEmail">Email:</label>
