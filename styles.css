@@ -280,7 +280,7 @@ nav a:hover {
 }
 
 /* Updated styles for Contact and Subscribe sections as cards */
-#contactForm {
+#contactUs {
   background-color: #0950CD;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -291,39 +291,12 @@ nav a:hover {
   margin: 0 auto; /* Center the form horizontally */
 }
 
-.contact-method {
-  display: flex;
-  gap: 20px;
+#contact-form {
+  max-width: 600px; /* Adjusted max-width */
+  margin: 0 auto; /* Center the form horizontally */
 }
 
-.contact-content,
-.subscribe-content {
-  background-color: #0950CD;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px auto;
-  width: 800px;
-}
-
-.contact-content h2,
-.subscribe-content h2 {
-  display: flex;
-  justify-content: center;
-  color: #fff;
-  font-size: 36px; /* Adjusted font size */
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-#contactForm,
-#subscribeForm {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#contactForm label,
-#subscribeForm label {
+#contact-form label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
@@ -331,9 +304,8 @@ nav a:hover {
   color: #fff;
 }
 
-#contactForm input,
-#subscribeForm input,
-#contactForm textarea {
+#contact-form input,
+#contact-form textarea {
   width: 100%; /* Full width within the max-width container */
   padding: 10px;
   margin-bottom: 15px;
@@ -342,8 +314,12 @@ nav a:hover {
   box-sizing: border-box; /* Include padding and border in width calculation */
 }
 
-#contactForm button,
-#subscribeForm button {
+.contact-methods {
+  display: flex;
+  gap: 20px;
+}
+
+#contact-form button {
   padding: 12px 20px;
   background-color: #3498db;
   color: #fff;
@@ -353,8 +329,68 @@ nav a:hover {
   font-size: 16px;
 }
 
-#contactForm button:hover,
-#subscribeForm button:hover {
+#contact-form button:hover {
+  background-color: #2980b9;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Adjusted CSS for the Subscribe Section */
+.subscribe {
+  background-color: #0950CD;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px; /* Adjusted max-width */
+}
+
+.subscribe h2 {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 36px; /* Adjusted font size */
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#subscribe-form {
+  max-width: 600px; /* Adjusted max-width */
+  margin: 0 auto;
+}
+
+#subscribe-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: #fff;
+}
+
+#subscribe-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#subscribe-form button {
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#subscribe-form button:hover {
   background-color: #2980b9;
 }
 
@@ -363,7 +399,10 @@ nav a:hover {
   color: #333;
 }
 
-
+.success-message {
+  margin-top: 20px;
+  color: #fff;
+}
 
 /* Footer Styles */
 footer {
