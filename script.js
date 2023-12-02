@@ -1,4 +1,51 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Function to fetch weather data from OpenWeather API
+    // Function to fetch weather data from OpenWeather API
+function fetchWeather() {
+    const apiKey = '0dc3be9f41dc0baafe9f17469f061d46';
+    const city = 'San Diego';
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`; // Use units=imperial for Fahrenheit
+
+    $.ajax({
+        url: apiUrl,
+        type: 'GET',
+        success: function(data) {
+            // Update the weather-info element with relevant weather information
+            const weatherInfo = `Current Weather in ${city}: ${data.weather[0].description}, ${Math.round(data.main.temp)}°F`;
+            
+            // Add an emoji based on the weather description
+            const emoji = getWeatherEmoji(data.weather[0].description);
+            $('#weather-info').html(`${weatherInfo} ${emoji}`);
+        },
+        error: function(error) {
+            console.error('Error fetching weather data:', error);
+        }
+    });
+}
+
+
+    // Function to get weather emoji based on description
+    function getWeatherEmoji(description) {
+        // Example mapping, you can customize this based on your preference
+        const emojiMap = {
+            'clear sky': '☀️',
+            'few clouds': '🌤️',
+            'scattered clouds': '⛅',
+            'broken clouds': '☁️',
+            'shower rain': '🌧️',
+            'rain': '🌧️',
+            'thunderstorm': '⛈️',
+            'snow': '❄️',
+            'mist': '🌫️',
+        };
+
+        // Use the mapped emoji or return a default emoji
+        return emojiMap[description.toLowerCase()] || '🌍';
+    }
+
+    // Call the fetchWeather function when the page loads
+    fetchWeather();
+
     const allTabs = document.querySelectorAll('.schedule-tabs button, .sponsor-tabs button');
     const allTabContents = document.querySelectorAll('.tab-content, .sponsor-tab-content');
 
@@ -17,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
             clickedTab.classList.add('active');
             const dataTarget = clickedTab.getAttribute('data-target');
             const correspondingContent = document.getElementById(dataTarget);
-            
+
             if (correspondingContent) {
                 correspondingContent.style.display = 'block';
             }
@@ -43,77 +90,72 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Set initial state for all tabs
     setInitialState(allTabs);
-});
 
-
-document.addEventListener("DOMContentLoaded", function () {
     const speakers = [
-      {
-        name: "Garima Singh",
-        title: "Chief Architect, Sandvik",
-        photo: "Speakers/Garim-Singh.webp",
-      },
-      {
-        name: "Jamie Stapleton",
-        title: "VP of Global Digital Strategy, Hitachi Energy",
-        photo: "Speakers/Jamie-Stapleton.webp",
-      },
-      {
-        name: "Agata Grela",
-        title: "Digital Strategy Leader, RBS International",
-        photo: "Speakers/Agata-Grela.webp",
-      },
-      {
-        name: "Jesper Toubøl",
-        title: "Vice President of Operations, Lego",
-        photo: "Speakers/Jesper-Touboel.webp",
-      },
+        {
+            name: "Garima Singh",
+            title: "Chief Architect, Sandvik",
+            photo: "Speakers/Garim-Singh.webp",
+        },
+        {
+            name: "Jamie Stapleton",
+            title: "VP of Global Digital Strategy, Hitachi Energy",
+            photo: "Speakers/Jamie-Stapleton.webp",
+        },
+        {
+            name: "Agata Grela",
+            title: "Digital Strategy Leader, RBS International",
+            photo: "Speakers/Agata-Grela.webp",
+        },
+        {
+            name: "Jesper Toubøl",
+            title: "Vice President of Operations, Lego",
+            photo: "Speakers/Jesper-Touboel.webp",
+        },
     ];
-  
+
     const speakersContainer = document.querySelector(".carousel-container");
-  
+
     function createSpeakerCard(speaker) {
-      const speakerCard = document.createElement("div");
-      speakerCard.classList.add("speaker");
-  
-      const image = document.createElement("img");
-      image.src = speaker.photo;
-      image.alt = `${speaker.name} Photo`;
-  
-      const name = document.createElement("h3");
-      name.textContent = speaker.name;
-  
-      const title = document.createElement("p");
-      title.textContent = speaker.title;
-  
-      speakerCard.appendChild(image);
-      speakerCard.appendChild(name);
-      speakerCard.appendChild(title);
-  
-      return speakerCard;
+        const speakerCard = document.createElement("div");
+        speakerCard.classList.add("speaker");
+
+        const image = document.createElement("img");
+        image.src = speaker.photo;
+        image.alt = `${speaker.name} Photo`;
+
+        const name = document.createElement("h3");
+        name.textContent = speaker.name;
+
+        const title = document.createElement("p");
+        title.textContent = speaker.title;
+
+        speakerCard.appendChild(image);
+        speakerCard.appendChild(name);
+        speakerCard.appendChild(title);
+
+        return speakerCard;
     }
-  
+
     let currentSlide = 0;
-  
+
     function showNextSlide() {
-      currentSlide = (currentSlide + 1) % speakers.length;
-      showSpeakers();
+        currentSlide = (currentSlide + 1) % speakers.length;
+        showSpeakers();
     }
-  
+
     function showSpeakers() {
-      speakersContainer.innerHTML = "";
-      const speakerCard = createSpeakerCard(speakers[currentSlide]);
-      speakersContainer.appendChild(speakerCard);
+        speakersContainer.innerHTML = "";
+        const speakerCard = createSpeakerCard(speakers[currentSlide]);
+        speakersContainer.appendChild(speakerCard);
     }
-  
+
     // Automatically advance to the next slide every 5 seconds (adjust as needed)
     setInterval(showNextSlide, 5000);
-  
+
     // Show the initial slide
     showSpeakers();
-  });
 
-  document.addEventListener("DOMContentLoaded", function () {
     // Contact Form
     $('#contact-form').submit(function (event) {
         event.preventDefault(); // Prevent the default form submission
