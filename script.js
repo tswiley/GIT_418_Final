@@ -113,4 +113,89 @@ document.addEventListener("DOMContentLoaded", function () {
     showSpeakers();
   });
 
-  
+  document.addEventListener("DOMContentLoaded", function () {
+    // Contact Form
+    $('#contact-form').submit(function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const nameInput = $('#name');
+        const phoneInput = $('#phone');
+        const emailInput = $('#email');
+        const contactMethodInput = $("input[name='contact-method']:checked");
+        const commentsInput = $('#comments');
+        const nameError = $('#name-error');
+        const phoneError = $('#phone-error');
+        const emailError = $('#email-error');
+        const contactMethodError = $('#contact-method-error');
+        const commentsError = $('#comments-error');
+
+        // Validate inputs
+        const isValidName = validateNotEmpty(nameInput.val());
+        const isValidPhone = validateNotEmpty(phoneInput.val());
+        const isValidEmail = validateEmail(emailInput.val());
+        const isValidContactMethod = contactMethodInput.length > 0;
+        const isValidComments = validateNotEmpty(commentsInput.val());
+
+        // Display error messages
+        displayErrorMessage(isValidName, nameError, 'Please enter your name.');
+        displayErrorMessage(isValidPhone, phoneError, 'Please enter your phone number.');
+        displayErrorMessage(isValidEmail, emailError, 'Please enter a valid email address.');
+        displayErrorMessage(isValidContactMethod, contactMethodError, 'Please select a contact method.');
+        displayErrorMessage(isValidComments, commentsError, 'Please enter your comments.');
+
+        // Check if all inputs are valid
+        if (isValidName && isValidPhone && isValidEmail && isValidContactMethod && isValidComments) {
+            // Handle successful submission (you can replace this with your own logic)
+            alert('Thank you for contacting us. We will reach out to you soon.');
+            // Clear the form
+            $('#contact-form')[0].reset();
+        }
+    });
+
+    // Subscribe Form
+    $('#subscribe-form').submit(function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const emailInput = $('#subscribe-form #email');
+
+        // Validate the email format
+        const isValidEmail = validateEmail(emailInput.val());
+
+        if (isValidEmail) {
+            // Display the success message and clear the input
+            alert('Thank you for subscribing. You\'ll receive updates for the 2024 Conference soon.');
+            emailInput.val('');
+
+            // Save the email to local storage (you can replace this with your own logic)
+            const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+            subscribedEmails.push(emailInput.val());
+            localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+        } else {
+            // Display an error message for invalid email
+            alert('Please enter a valid email address.');
+        }
+    });
+
+    // Helper function to validate if a field is not empty
+    function validateNotEmpty(value) {
+        return value.trim() !== '';
+    }
+
+    // Helper function to validate email format
+    function validateEmail(email) {
+        // Using a more permissive email pattern
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    // Helper function to display error message
+    function displayErrorMessage(isValid, errorElement, errorMessage) {
+        if (!isValid) {
+            errorElement.text(errorMessage);
+            errorElement.show();
+        } else {
+            errorElement.text('');
+            errorElement.hide();
+        }
+    }
+});
