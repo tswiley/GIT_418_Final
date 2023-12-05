@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const nameInput = $('#name');
         const phoneInput = $('#phone');
-        const emailInput = $('#email');
+        const emailInput = $('#email-contact');
         const contactMethodInput = $("input[name='contact-method']:checked");
         const commentsInput = $('#comments');
         const nameError = $('#name-error');
