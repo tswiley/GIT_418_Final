@@ -200,21 +200,27 @@ document.addEventListener("DOMContentLoaded", function() {
     // Subscribe Form
     $('#subscribe-form').submit(function (event) {
         event.preventDefault(); // Prevent the default form submission
-
+    
         const emailInput = $('#subscribe-form #email');
-
+        const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+    
         // Validate the email format
         const isValidEmail = validateEmail(emailInput.val());
-
+    
         if (isValidEmail) {
-            // Display the success message and clear the input
-            alert('Thank you for subscribing. You\'ll receive updates for the 2024 Conference soon.');
-            emailInput.val('');
-
-            // Save the email to local storage (you can replace this with your own logic)
-            const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
-            subscribedEmails.push(emailInput.val());
-            localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+            // Check if the email is already subscribed
+            if (subscribedEmails.includes(emailInput.val())) {
+                // Display a message that the email has already been submitted
+                alert('This email has already been subscribed. Thank you for your interest.');
+            } else {
+                // Display the success message and clear the input
+                alert('Thank you for subscribing. You\'ll receive updates for the 2024 Conference soon.');
+                emailInput.val();
+    
+                // Save the email to local storage
+                subscribedEmails.push(emailInput.val());
+                localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+            }
         } else {
             // Display an error message for invalid email
             alert('Please enter a valid email address.');

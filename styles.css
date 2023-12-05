@@ -37,8 +37,8 @@ body {
 
 /* Header Styles */
 header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between; /* Spread items evenly */
   background-color: #3498db;
   color: #ffffff;
   padding: 15px 20px;
@@ -47,9 +47,7 @@ header {
 }
 
 nav {
-  grid-column: 2;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -75,6 +73,11 @@ nav a {
 nav a:hover {
   color: #ecf0f1;
 }
+
+#weather-info {
+  margin-left: auto; /* Push weather info to the right */
+}
+
 
 /* Home Intro Styles */
 .home-intro {
